@@ -1,0 +1,562 @@
+/*
+Theme Name: Tema Original IASD 15 Avenida
+Theme URI: http://dahngeek.com/
+Description: Tema original y bonito diseñado y desarrollado para Iglesia Adventista del Séptimo Día 15 Avenida
+Author: dahngeek
+Version: 2.1.1
+Tags: iasd, 15 avenida
+*/
+
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('media/Fonts/Raleway-Regular.eot');
+  src: url('media/Fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype'),
+       url('media/Fonts/Raleway-Regular.woff') format('woff'),
+       url('media/Fonts/Raleway-Regular.ttf') format('truetype'),
+       url('media/Fonts/Raleway-Regular.svg#Raleway') format('svg');
+}
+@font-face {
+  font-family: 'Raleway-Bold';
+  src: url('media/Fonts/Raleway-Bold.eot');
+  src: url('media/Fonts/Raleway-Bold.eot?#iefix') format('embedded-opentype'),
+       url('media/Fonts/Raleway-Bold.woff') format('woff'),
+       url('media/Fonts/Raleway-Bold.ttf') format('truetype'),
+       url('media/Fonts/Raleway-Bold.svg#Raleway-Bold') format('svg');
+}
+html{
+    margin: 0px;
+    height: auto !important;
+    padding: 0px;
+    padding-bottom: -30px;
+}
+body {
+    font-family: 'Raleway';
+    /*max-width: 1240px;*/
+    margin: 0px auto;
+    height: auto !important;
+}
+p.centrado {
+    width: 300px;
+    max-width: 100%;
+    margin: 5px auto;
+    min-height: 150px;
+    text-align: center;
+}
+p.centrado img {
+    max-width: 55%;
+        background: transparent;
+      -webkit-transition: all 0.5s linear;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: all 0.5s linear;  /* Firefox 4-15 */
+       -o-transition: all 0.5s linear;  /* Opera 10.50–12.00 */
+          transition: all 0.5s linear; 
+}
+
+#cabecera {
+    background: #f6f6f6; /* #b3aa9b */
+    position: relative;
+    height: 130px;
+    z-index: 9999;
+}
+.menu {
+    position: absolute;
+    top: 25%;
+    max-width: 62.5em;
+}
+.menu ul {
+    padding: 0px;
+    margin: 0px;
+}
+.menu ul li {
+    list-style: none;
+    text-align: center;
+    border-bottom: 2px solid #5a92b5;
+         -moz-transition: all 0.2s linear;  /* Firefox 4-15 */
+       -o-transition: all 0.2s linear;  /* Opera 10.50–12.00 */
+          transition: all 0.2s linear; 
+}
+.menu ul li:hover, .menu ul li.activo  {
+    border-bottom: 5px solid #5a92b5;
+}
+
+#slider {
+overflow: hidden;
+  background: rgb(9,85,146); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(9,85,146,1) 0%, rgba(18,113,175,1) 6%, rgba(18,113,175,1) 50%, rgba(9,85,146,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(9,85,146,1)), color-stop(6%,rgba(18,113,175,1)), color-stop(50%,rgba(18,113,175,1)), color-stop(100%,rgba(9,85,146,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(9,85,146,1) 0%,rgba(18,113,175,1) 6%,rgba(18,113,175,1) 50%,rgba(9,85,146,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(9,85,146,1) 0%,rgba(18,113,175,1) 6%,rgba(18,113,175,1) 50%,rgba(9,85,146,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(9,85,146,1) 0%,rgba(18,113,175,1) 6%,rgba(18,113,175,1) 50%,rgba(9,85,146,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(9,85,146,1) 0%,rgba(18,113,175,1) 6%,rgba(18,113,175,1) 50%,rgba(9,85,146,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#095592', endColorstr='#095592',GradientType=0 ); /* IE6-9 */
+  min-width: 100%;
+  max-height: 320px;
+  border-top: 4px solid #1271af;
+  border-bottom: 4px solid #1271af;
+  position: relative;
+}
+#slider .cycle {
+    background: url(img/map.png) repeat-x;
+    background-position: 0% 0%;
+    width: 100%;
+    max-height: 320px;
+}
+#slider .slide {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: auto !important;
+    background: rgba(0,0,0,0) !important;
+}
+#slider .slide .descrip {
+    font-family: 'Raleway-Bold';
+    color: #000;
+    text-decoration: none;
+    padding: 3px;
+    font-size: 200%;
+    position: absolute;
+    bottom: 25%;
+    right: 10%;
+    max-width: 720px;
+    background: rgba(255,255,255,0.6);
+}
+#slider .slide .descrip a {
+    color: #000;
+    text-decoration: none;
+
+}
+#slider #navSl {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 120px;
+    margin-left: -60px;
+    text-align: center;
+    z-index: 99999;
+}
+
+#slider #navSl a {
+    width: 10px;
+    height: 10px;
+    font-size: 0px;
+    padding: 6px;
+    margin: 0px 5px;
+    background: #fff;
+    border: 1px solid #1271af;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+#slider #navSl a.activeSlide {
+    width: 10px;
+    height: 10px;
+    font-size: 0px;
+    padding: 6px;
+    margin: 0px 5px;
+    background: #1271af;
+    border: 1px solid #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+#menuOp {
+    padding-top: 10px;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+#menuOp .column, #menuOp .columns {
+position: relative;
+padding-left: 0.2375em;
+padding-right: 0.2375em;
+padding-bottom: 0.2375em;
+padding-top: 0.2375em;
+float: left;
+}
+
+#menuOp:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#menuOp .itemMain, #menuOp .direccionMain {
+    min-height: 140px;
+    height: 140px;
+}
+
+#menuOp .itemMain .containergrid {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+#menuOp .itemMain .containergrid .overlay {
+    position: absolute;
+    border-top: 3px solid #095592;
+    z-index: 99;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    overflow: hidden;
+    height: 0px;
+    background: rgba(0,0,0,0.6);
+-moz-transition: all 150ms linear;
+    -ms-transition: all 150ms linear;
+    -o-transition: all 150ms linear;
+    -webkit-transition: all 150ms linear;
+    transition: all 150ms linear;
+    }
+#menuOp .itemMain .containergrid:hover .overlay {
+    height: 43%;
+    border-top: 2px solid #0066cc;
+}
+#menuOp .itemMain .containergrid .overlay a p {
+    margin: 0px;
+    padding: 3px;
+}
+#menuOp .itemMain .containergrid .overlay a {
+    color: #fff;
+    text-decoration: none;
+}
+#menuOp .itemMain .containergrid .overlay a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+#menuOp .itemMain .containergrid .imagenSeleccion {
+    position: absolute;
+    max-width: none;
+    top: 0;
+    left: 0;
+}
+
+// Small screens
+@media only screen {} /* Define mobile styles */
+
+@media only screen and (max-width: 40em) {
+    #cabecera {
+    height: auto;
+}
+    .menu {
+    position: relative;
+}
+    .menu ul li {
+    position: relative;
+    padding: 5px 0px;
+}
+    
+#menuOp .itemMain .containergrid .overlay {
+    position: absolute;
+    border-top: none;
+    z-index: 99;
+    top: 0px;
+    right: 0px;
+    left: auto;
+    width: 80%;
+    overflow: hidden;
+    height: 100%;
+    background: none;
+-moz-transition: all 150ms linear;
+    -ms-transition: all 150ms linear;
+    -o-transition: all 150ms linear;
+    -webkit-transition: all 150ms linear;
+    transition: all 150ms linear;
+    }
+    #menuOp .itemMain .containergrid .overlay a p {
+            font-family: 'Raleway-Bold';
+    color: #fff;
+    text-decoration: none;
+    padding: 3px;
+    font-size: 100%;
+    position: absolute;
+    bottom: 30%;
+    right: 10%;
+    max-width: 720px;
+    background: rgba(0,0,0,0.6);
+    }
+    #menuOp .itemMain .containergrid:hover .overlay {
+    height: 100%;
+    border-top: none;
+}
+#noticiaContenido {
+    max-width: 100%;
+}
+#noticiaContenido img {
+    max-width: 100%;
+}
+
+    } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+#piePagina {
+    background: #383838;
+    margin-top: 10px;
+}
+.texto {
+    color: #ccc;
+    padding: 5px 10px;
+}
+#piePagina:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#gmap {
+    width: 100%;
+    height: 100%;
+}
+.titPagina {
+    color: #fff;
+    font-family: 'Raleway-Bold', Arial, Helvetica;
+    margin: 10px 30px;
+}
+
+#contenidoNoticiaPrincipal, #contenidoEnlaces {
+    max-width: 940px;
+    margin-top: 10px;
+}
+div.tituloDnoticia {
+    padding: 0px 5px;
+}
+h1.tituloNoticia, div.contenidoNoticia h1 {
+    font-family: 'Raleway-Regular', Arial, Helvetica;
+    padding: 1px;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(top,#095592 0,#095592 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+border-bottom: 3px solid #1271af;
+margin-bottom: 0px;
+}
+img.imagenDestacada {
+    border-bottom: 3px solid #1271af;
+}
+div.contenidoNoticia {
+    padding: 5px 5px;
+    margin-top: 5px;
+    font-size: 110%;
+    margin-bottom: 20px;
+    line-height: 120%;
+}
+
+/*Estilos para Wordpress Editor*/
+.wp-caption {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 1.25rem;
+}
+.wp-caption .wp-caption-text {
+    position: absolute;
+    bottom: 3px;
+    color: #fff;
+    max-width: 98%;
+    padding: 4px;
+    font-style: italic;
+    background: rgba(0,0,0,0.7);
+}
+code {
+    color: #095592;
+}
+img.alignright {
+    float: right;
+    margin: 3px;
+}
+img.size-thumbnail {
+    border: 1px solid #0099ff;
+}
+img.size-thumbnail:hover {
+    border: 1px solid #0066cc;
+}
+.aligncenter {
+    margin: 3px auto;
+}
+img.alignleft {
+    float: left;
+    margin: 3px;
+}
+div.contenidoNoticia ul li {
+      list-style: none;
+}
+/*Alineaciones de wordpresss*/
+.alignleft {
+    float: left;
+    margin:0 15px 30px 0;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 30px auto;
+}
+.alignright {
+    float: right;
+    margin:0 0 30px 15px;
+}
+.alignnone {
+    float: none;
+    display:block;
+    margin:0 0 30px 0;
+}
+.size-full {
+    width:100%;
+    height:auto;
+    margin:0 0 30px 0;
+}
+p .alignleft {
+    float: left;
+    margin:5px 15px 30px 0;
+}
+p .aligncenter {
+    display: block;
+    margin: 5px auto 30px auto;
+}
+p .alignright {
+    float: right;
+    margin:5px 0 30px 15px;
+}
+p .alignnone {
+    float: none;
+    display:block;
+    margin:5px 0 30px 0;
+}
+p .size-full {
+    width:100%;
+    height:auto;
+    margin:5px 0 30px 0;
+}
+/*terminana anlineaciones*/
+
+
+div.contenidoNoticia ul li:before {
+      /* For a round bullet */
+      content:'\2022';
+      /* For a square bullet */
+      /*content:'\25A0';*/
+      display: block;
+      position: relative;
+      max-width: 0px;
+      max-height: 0px;
+      left: -15px;
+      top: -25px;
+      color: #0099cc;
+      font-size: 300%;
+      padding: 0px;
+}
+div.contenidoNoticia ol {
+    counter-reset: li; /* Initiate a counter */
+    list-style: none; /* Remove default numbering */
+    *list-style: decimal; /* Keep using default numbering for IE6/7 */
+    padding: 0;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+div.contenidoNoticia ol li {
+    margin-bottom: 5px;
+}
+div.contenidoNoticia ol ol {
+    margin: 0 0 0 2em; /* Add some left margin for inner lists */
+}
+
+div.contenidoNoticia ol li:before{
+    font-family: 'Raleway-Bold', Arial,Helvetica;
+    content: counter(li);
+    counter-increment: li;
+    display: inline-block;
+    color: #fff;
+    margin-right: 2px;
+    background: #0099ff;
+    height: 100%;
+    width: 20px;
+    text-align: center;
+}
+div.contenidoNoticia ol ol li:before {
+    background: #0066ff;
+}
+th {
+    overflow: hidden;
+  background: rgb(9,85,146); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(9,85,146,1) 0%, rgba(18,113,175,1) 6%, rgba(18,113,175,1) 50%, rgba(9,85,146,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(9,85,146,1)), color-stop(6%,rgba(18,113,175,1)), color-stop(50%,rgba(18,113,175,1)), color-stop(100%,rgba(9,85,146,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(9,85,146,1) 0%,rgba(18,113,175,1) 6%,rgba(18,113,175,1) 50%,rgba(9,85,146,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(9,85,146,1) 0%,rgba(18,113,175,1) 6%,rgba(18,113,175,1) 50%,rgba(9,85,146,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(9,85,146,1) 0%,rgba(18,113,175,1) 6%,rgba(18,113,175,1) 50%,rgba(9,85,146,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(9,85,146,1) 0%,rgba(18,113,175,1) 6%,rgba(18,113,175,1) 50%,rgba(9,85,146,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#095592', endColorstr='#095592',GradientType=0 ); /* IE6-9 */
+    color: #fff !important;
+    font-family: 'Raleway-Bold', Arial, Helvetica;
+}
+blockquote, address {
+    border-left: 2px solid #095592;
+    background: #fff; /* Old browsers */
+background: -moz-linear-gradient(left,  #0099ff 0%, #0033cc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#0099ff), color-stop(100%,#0033cc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  #0099ff 0%,#0033cc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  #0099ff 0%,#0033cc 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  #0099ff 0%,#0033cc 100%); /* IE10+ */
+background: linear-gradient(to right,  #0099ff 0%,#0033cc 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0099ff', endColorstr='#0033cc',GradientType=1 ); /* IE6-9 */
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+address {
+    border-left: none;
+}
+div.contenidoNoticia h2 {
+        font-family: 'Raleway-Regular', Arial, Helvetica;
+    padding: 1px;
+    background: -webkit-linear-gradient(top,#095592 0,#095592 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+border-bottom: 1px solid #1271af;
+margin-bottom: 0px;
+}
+div.contenidoNoticia h3, div.contenidoNoticia h6 {
+    background: #0099ff;
+    color: #fff;
+}
+#menuOp h3 {
+    font-family: 'Raleway-Bold',Arial,Helvetica;
+font-size: 100%;
+}
+
+/* =============================================
+==========    ENLACES =========================*/
+
+#lateralEnlaces ul {
+    list-style: none;
+}
+#lateralEnlaces ul li a, #lateralEnlaces ul li a:visited {
+    text-decoration: none;
+    color: #000;
+}
+#lateralEnlaces ul li.activo a {
+    color: #0099ff;
+}
+.contenedorEnlaces {
+    padding: 15px;
+}
+.contenedorEnlaces .enlace {
+    border-bottom: 1px dotted #000;
+    margin-bottom: 10px;
+}
+.contenedorEnlaces .enlace .titulo {
+    font-family: 'Raleway-Bold';
+    color: #0099ff;
+    padding: 5px;
+    width: auto;
+    font-size: 130%;
+    margin-bottom: 0px !important;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    cursor: pointer;
+}
+.contenedorEnlaces .enlace .titulo:hover {
+    color: #fff;
+    background: #0099ff;
+}
+.contenedorEnlaces .enlace .social {
+    margin-top: -1em;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+}

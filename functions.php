@@ -25,24 +25,24 @@ add_filter('login_headertitle', 'cambiarTituloLogin');
 
 function get_the_styles() {
     global $post;
-    
+
     wp_enqueue_style('resetStyle', get_bloginfo( 'stylesheet_directory' ).'/css/reset.css');
     wp_enqueue_style('foundation', get_bloginfo( 'stylesheet_directory' ).'/css/foundation.css');
     wp_enqueue_style('themeStyle', get_bloginfo( 'stylesheet_url' ), array("resetStyle"));
-    
-    
+
+
 
     //SPECIFIC STYLES
     if (isset($post->ID)) {
         switch ($post->ID) {
-            
+
         }
     }
 }
 
 function get_the_scripts() {
     global $post;
-    
+
     //GENERAL SCRIPTS
     wp_enqueue_script("cssBrowserSelector", get_bloginfo( 'stylesheet_directory' ).'/js/libs/css_browser_selector.js', array(), false, true);
     wp_enqueue_script("general", get_template_directory_uri()."/js/functions/general.js", array("jquery"), false, true);
@@ -52,11 +52,11 @@ function get_the_scripts() {
     wp_enqueue_script("mapPlace", get_template_directory_uri()."/js/maplace.min.js", array("jquery"), false, true);
     wp_enqueue_script("modernizr", get_template_directory_uri()."/js/vendor/modernizr.js", array(), false, false);
     wp_enqueue_script("main", get_template_directory_uri()."/js/main.js", array(), false, true);
-    
+
     //SPECIFIC SCRIPTS
     if (isset($post->ID)) {
         switch ($post->ID) {
-            
+
         }
     }
 }
@@ -83,7 +83,7 @@ function cambiarURLLogin(){
 
 //Cambiamos el titulo del link
 function cambiarTituloLogin(){
-    return ('MilknCookies');
+    return ('IASD 15 Avenida');
 }
 
 //set favicon
@@ -93,11 +93,11 @@ function blogFavicon() {
 
 function setUpdateMode() {
     global $user_email;
-    
+
     $update = false;
-    
+
     if ($update) {
-        
+
         if ((!is_user_logged_in() && $user_email != "me@dahngeek.com") && !is_home() && !is_front_page()) {
             wp_redirect(home_url());
             exit;
@@ -107,7 +107,7 @@ function setUpdateMode() {
 
 function setFacebookMetas() {
     global $post, $category;
-    
+
     if ( is_home() || is_front_page() || is_search() || is_404()) {
         ?>
             <meta property="og:title" content="<?php echo get_bloginfo('name'); ?>" />
@@ -129,7 +129,7 @@ function setFacebookMetas() {
         if (has_post_thumbnail( $post->ID )) {
             $image_to_show = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
         } else {
-            $args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
+            $args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID );
             $attachments = get_posts($args);
 
 
@@ -160,7 +160,7 @@ function setIECompatibility() {
 
 function setPageTitle() {
     global $post, $category;
-    
+
     echo '<title>';
 
     echo get_bloginfo('name').' | ';

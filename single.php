@@ -11,19 +11,21 @@ get_header();
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
           <div class="tituloDnoticia">
               <h1 class="tituloNoticia"><?php the_title(); ?></h1>
-              <?php 
+              <?php
                 if ( has_post_thumbnail() ) {
                   $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
+                  ?>
+                  <img src="<?php echo $large_image_url; ?>" alt="imagendestacada" class="imagenDestacada">
+                  <?php
                 }
                 ?>
-              <img src="<?php echo $large_image_url; ?>" alt="imagendestacada" class="imagenDestacada">
           </div>
           <small id="postInfo"><?php setlocale(LC_TIME, "es_ES"); ?><?php echo strftime("%d de %B de %Y"); ?></small>
           <div class="contenidoNoticia">
               <?php the_content(); ?>
               <?php endwhile; else : ?>
               <p><?php _e( 'No se encontró nada.' ); ?></p>
-              
+
           </div>
           <?php endif; ?>
       </div>

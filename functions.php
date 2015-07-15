@@ -59,6 +59,9 @@ function get_the_scripts() {
 
         }
     }
+    if (is_page('enlaces')) {
+      wp_enqueue_script("enlaces", get_template_directory_uri()."/js/enlaces.js", array('jquery'), false, false);
+    }
 }
 
 //cambiamos la imagen del login
@@ -220,4 +223,52 @@ function debug($variable, $mensaje="", $die=false) {
     }
 }
 
+add_action( 'widgets_init', 'theme_slug_widgets_init' );
+function theme_slug_widgets_init() {
+  $args = array(
+  	'name'          => __( 'Barra Articulos', 'theme_text_domain' ),
+  	'id'            => 'articles-sidebar',
+  	'description'   => 'Barra lateral que va junto a los artiulos',
+          'class'         => '',
+  	'before_widget' => '<div id="%1$s" class="itemMain large-12 medium-12 left columns %2$s">',
+  	'after_widget'  => '</div>',
+  	'before_title'  => '<h3 class="widgettitle">',
+  	'after_title'   => '</h3>' );
+    register_sidebar( $args );
+    $arges = array(
+    	'name'          => __( 'Barra Páginas', 'theme_text_domain' ),
+    	'id'            => 'pages-sidebar',
+    	'description'   => 'Barra lateral que va junto a las paginas.',
+            'class'         => '',
+    	'before_widget' => '<div id="%1$s" class="itemMain large-12 medium-12 left columns %2$s">',
+    	'after_widget'  => '</div>',
+    	'before_title'  => '<h3 class="widgettitle">',
+    	'after_title'   => '</h3>' );
+      register_sidebar( $arges );
+}
+
+function wpb_set_post_views($postID) {
+    $count_key = 'wpb_post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+//To keep the count accurate, lets get rid of prefetching
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+function wpb_track_post_views ($post_id) {
+    if ( !is_single() ) return;
+    if ( empty ( $post_id) ) {
+        global $post;
+        $post_id = $post->ID;
+    }
+    wpb_set_post_views($post_id);
+}
+add_action( 'wp_head', 'wpb_track_post_views');
 ?>

@@ -23,7 +23,7 @@
       <div class="row">
         <div class="small-12">
             <p class="centrado">
-              <a href=""><img src="<?php bloginfo('template_url');?>/img/logo_15av.png" alt=""></a>
+              <a href=" <?php echo get_bloginfo('url');?>"><img src="<?php bloginfo('template_url');?>/img/logo_15av.png" alt=""></a>
             </p>
         </div>
         <div class="menu large-12 small-12">

@@ -3,18 +3,18 @@ get_header();
 ?>
 <!-- Inicia slider -->
     <div id="slider">
-      <h1 class="titPagina">Temas</h1>
+      <?php
+  if ( have_posts() ) {
+    while ( have_posts() ) {
+      the_post();
+      ?>
+      <h1 class="titPagina"><?php the_title(); ?></h1>
     </div>
     <!-- termina slider -->
     <div id="contenidoNoticiaPrincipal" class="row">
-      <?php
-  if ( have_posts() ) {
-  	while ( have_posts() ) {
-      the_post();
-      ?>
+
       <div id="noticiaContenido" class="large-9 medium-9 left">
           <div class="tituloDnoticia">
-              <h1 class="tituloNoticia"><?php the_title(); ?></h1>
               <?php
                 if (has_post_thumbnail()) {
                   ?>
@@ -35,24 +35,13 @@ get_header();
   ?>
     <div id="menuOp" class="large-3 medium-3 small-12 left">
       <?php
-$tags = wp_get_post_tags($post->ID);
-if ($tags) {
-  $etiquetas = array();
-foreach ($tags as $key => $value) {
-  $etiquetas[$key] = $value->term_id;
-}
-$args=array(
-'tag__in' => $etiquetas,
-'post__not_in' => array($post->ID),
-'posts_per_page'=>5,
-'caller_get_posts'=>1
-);
-$my_query = new WP_Query($args);
-if( $my_query->have_posts() ) {
+$popularpost = new WP_Query( array( 'posts_per_page' => 5, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
+if ($popularpost->have_posts()) {
+  ?>
+  <h3>Articulos y Noticias Destacados:</h3>
+  <?php
+  while ( $popularpost->have_posts() ) : $popularpost->the_post();
 ?>
-<h3>Articulos Relacionados:</h3>
-<?php
-while ($my_query->have_posts()) : $my_query->the_post(); ?>
 <div class="itemMain large-12 medium-12 left columns">
   <div class="containergrid">
     <div class="overlay">
@@ -75,12 +64,10 @@ while ($my_query->have_posts()) : $my_query->the_post(); ?>
   </div>
 </div>
 <?php
-endwhile;
-}
-wp_reset_query();
+  endwhile;
 }
 ?>
-<?php dynamic_sidebar( 'articles-sidebar' ); ?>
+<?php dynamic_sidebar( 'pages-sidebar' ); ?>
     </div>
     </div>
 

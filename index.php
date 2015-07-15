@@ -6,19 +6,19 @@ get_header();
       <div class="cycle">
         <div class="slide">
           <img src="<?php bloginfo('template_url');?>/img/slider/image1.png" alt="">
-          <div class="descrip"><a href="">Tituloooo</a></div>
+          <div class="descrip"><a href="">Titulo del Anuncio</a></div>
         </div>
         <div class="slide">
           <img src="<?php bloginfo('template_url');?>/img/slider/image2.png" alt="">
-          <div class="descrip"><a href="">Comidaaa</a></div>
+          <div class="descrip"><a href="">Titulo de la Entrada</a></div>
         </div>
         <div class="slide">
           <img src="<?php bloginfo('template_url');?>/img/slider/image3.png" alt="">
-          <div class="descrip"><a href="">Pizza</a></div>
+          <div class="descrip"><a href="">Titulo de la Página</a></div>
         </div>
         <div class="slide">
           <img src="<?php bloginfo('template_url');?>/img/slider/image4.png" alt="">
-          <div class="descrip"><a href="">Comida comida buena</a></div>
+          <div class="descrip"><a href="">Titulo de la publicación</a></div>
         </div>
       </div>
       <div id="navSl"></div>

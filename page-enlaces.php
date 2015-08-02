@@ -7,7 +7,7 @@ get_header();
 <!-- termina slider -->
 <div id="contenidoEnlaces" class="row">
  <div id="contenidoseccionEnlaces">
-  <div id="lateralEnlaces" class="large-3 medium-3 left">
+  <div id="lateralEnlaces" class="large-3 medium-3 small-12 left">
     <ul>
       <?
         global $wpdb;
@@ -52,7 +52,7 @@ get_header();
   <?php
   foreach ($linksArr as $key => $value) {
     ?>
-    <div id="contenedorEnlaces<?=$key;?>" style="display:block;" class="contenedorEnlaces large-9 medium-9 right">
+    <div id="contenedorEnlaces<?=$key;?>" style="display:block;" class="contenedorEnlaces large-9 medium-9 small-12 right">
         <?php
         foreach ($value["links"] as $key => $value) {
           ?>

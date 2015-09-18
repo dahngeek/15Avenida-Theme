@@ -271,4 +271,18 @@ function wpb_track_post_views ($post_id) {
     wpb_set_post_views($post_id);
 }
 add_action( 'wp_head', 'wpb_track_post_views');
+
+/* REGISTAR MENUS */
+
+add_action( 'after_setup_theme', 'register_my_menu' );
+function register_my_menu() {
+  register_nav_menu( 'primario', 'Menu principal' );
+}
+
+add_action( 'after_setup_theme', 'register_my2_menu' );
+function register_my2_menu() {
+  register_nav_menu( 'inicial', 'Menu Contenidos' );
+}
+/* Necesito el debug */
+ini_set("display_errors", 1); 
 ?>

@@ -26,7 +26,52 @@ get_header();
     <!-- termina slider -->
 
     <div id="menuOp">
-      <div class="itemMain large-3 medium-3 left columns">
+      <?php 
+        //Menu inicio, usamos arreglo definido en el header.
+        // Arreglo: arrInicio
+        // La imagen la cargamos del attr_title y en el arreglo se llama "img_option"
+        // En este caso, ignoramos los submenus
+      $i = 0; // Contador
+      if (!empty($arrInicio)){
+        //Si no está vacio el arreglo
+      foreach ($arrInicio as $key => $item) {
+        if ($i = 2) {
+          //Mostrar widget de mapa ubicacion
+          ?>
+            <div class="direccionMain large-6 medium-6 left columns">
+              <div id="gmap"></div>
+            </div>
+          <?php
+        }
+        $i++;
+        ?>
+          <div class="itemMain large-3 medium-3 left columns">
+            <div class="containergrid">
+              <div class="overlay">
+                <a href="<?php echo $item['url']?>">
+                  <p><?php echo $item['titulo']?></p>
+                </a>
+              </div>
+              <?php 
+              if (empty($item['img_option'])) {
+                if (has_post_thumbnail($item['id'])) {
+                    $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($item['id']), 'medium' );
+                    $link = $thumb['0'];
+                } else {
+                  $link = bloginfo('template_url')."/img/test.png";
+                }
+              } else {
+                $link = $item['img_option'];
+              }
+              ?>
+              <img class="imagenSeleccion" src="<?php echo $link; ?>" alt="">
+            </div>
+          </div>
+        <?php
+      }
+    } else {
+      ?>
+<div class="itemMain large-3 medium-3 left columns">
         <div class="containergrid">
           <div class="overlay">
             <a href="#">
@@ -89,6 +134,7 @@ get_header();
           <img class="imagenSeleccion" src="<?php bloginfo('template_url');?>/img/test.png" alt="">
         </div>
       </div>
+<?php }?>
     </div>
 
 <?php

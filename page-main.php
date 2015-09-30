@@ -1,8 +1,43 @@
 <?php
 get_header();
-?>
-<!-- Inicia slider -->
-    <div id="slider">
+
+
+/* Get all sticky posts */
+$sticky = get_option( 'sticky_posts' );
+
+/* Sort the stickies with the newest ones at the top */
+rsort( $sticky );
+
+/* Get the 5 newest stickies (change 5 for a different number) */
+$sticky = array_slice( $sticky, 0, 5 );
+//var_dump($sticky);
+/* Query sticky posts */
+$the_query = new WP_Query( array( 'post__in' => $sticky ) );
+// The Loop
+if ( $the_query->have_posts() ) {
+  ?>
+  <div id="slider">
+    <div class="cycle">
+  <?php
+  while ( $the_query->have_posts() ) {
+    $the_query->the_post();
+    ?>
+      <div class="slide">
+                <img src="<?php echo get_post_meta(get_the_ID(), 'slider', true); ?>" alt="<?php echo get_the_title();?>">
+                <div class="descrip"><a href="<?php echo get_permalink();?>"><?php echo get_the_title();?></a></div>
+              </div>
+    <?php
+    
+  }
+  ?>
+</div>
+      <div id="navSl"></div>
+    </div>
+  <?php
+  
+} else {
+  ?>
+<div id="slider">
       <div class="cycle">
         <div class="slide">
           <img src="<?php bloginfo('template_url');?>/img/slider/image1.png" alt="">
@@ -23,6 +58,12 @@ get_header();
       </div>
       <div id="navSl"></div>
     </div>
+  <?php
+}
+/* Restore original Post Data */
+wp_reset_postdata();
+?>
+<!-- Inicia slider -->
     <!-- termina slider -->
   <?php
 global $wp_query;

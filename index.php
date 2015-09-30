@@ -2,7 +2,7 @@
 get_header();
 ?>
 <div id="slider">
-      <h1 class="titPagina"><?php get_the_title(); ?></h1>
+      <h1 class="titPagina">Artículos</h1>
     </div>
     <!-- termina slider -->
 <div id="blogPosts">

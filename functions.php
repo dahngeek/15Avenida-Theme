@@ -66,8 +66,8 @@ function get_the_scripts() {
 
 //cambiamos la imagen del login
 function myLoginHead() {
-	echo "
-	<style>
+    echo "
+    <style>
             body.login #login h1 a {
                     background: url('".get_bloginfo('template_url')."/media/imagenes/generales/login_logo.png') no-repeat scroll center top transparent;
                     width: 390px;
@@ -75,8 +75,8 @@ function myLoginHead() {
                     margin-left: -35px;
                     background-size: 390px 227px;
             }
-	</style>
-	";
+    </style>
+    ";
 }
 
 //Cambiamos el link de el logo del login
@@ -91,7 +91,7 @@ function cambiarTituloLogin(){
 
 //set favicon
 function blogFavicon() {
-	echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.get_bloginfo('template_url').'/media/imagenes/generales/favicon.ico" />';
+    echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.get_bloginfo('template_url').'/media/imagenes/generales/favicon.ico" />';
 }
 
 function setUpdateMode() {
@@ -166,10 +166,11 @@ function setPageTitle() {
 
     echo '<title>';
 
-    echo get_bloginfo('name').' | ';
-
     // Add the blog description for the home/front page.
-    if ( is_home() || is_front_page()) {
+    if (is_home()) {
+        echo "Artículos";
+}
+    else if (is_front_page()) {
         echo "Inicio";
     } else if (is_search()) {
         echo "Búsqueda";
@@ -181,7 +182,7 @@ function setPageTitle() {
     } else {
         echo $post->post_title;
     }
-
+    echo ' | '.get_bloginfo('name');
     echo '</title>';
 }
 
@@ -226,24 +227,24 @@ function debug($variable, $mensaje="", $die=false) {
 add_action( 'widgets_init', 'theme_slug_widgets_init' );
 function theme_slug_widgets_init() {
   $args = array(
-  	'name'          => __( 'Barra Articulos', 'theme_text_domain' ),
-  	'id'            => 'articles-sidebar',
-  	'description'   => 'Barra lateral que va junto a los artiulos',
+    'name'          => __( 'Barra Articulos', 'theme_text_domain' ),
+    'id'            => 'articles-sidebar',
+    'description'   => 'Barra lateral que va junto a los artiulos',
           'class'         => '',
-  	'before_widget' => '<div id="%1$s" class="itemMain large-12 medium-12 left columns %2$s">',
-  	'after_widget'  => '</div>',
-  	'before_title'  => '<h3 class="widgettitle">',
-  	'after_title'   => '</h3>' );
+    'before_widget' => '<div id="%1$s" class="itemMain large-12 medium-12 left columns %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3 class="widgettitle">',
+    'after_title'   => '</h3>' );
     register_sidebar( $args );
     $arges = array(
-    	'name'          => __( 'Barra Páginas', 'theme_text_domain' ),
-    	'id'            => 'pages-sidebar',
-    	'description'   => 'Barra lateral que va junto a las paginas.',
+        'name'          => __( 'Barra Páginas', 'theme_text_domain' ),
+        'id'            => 'pages-sidebar',
+        'description'   => 'Barra lateral que va junto a las paginas.',
             'class'         => '',
-    	'before_widget' => '<div id="%1$s" class="itemMain large-12 medium-12 left columns %2$s">',
-    	'after_widget'  => '</div>',
-    	'before_title'  => '<h3 class="widgettitle">',
-    	'after_title'   => '</h3>' );
+        'before_widget' => '<div id="%1$s" class="itemMain large-12 medium-12 left columns %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widgettitle">',
+        'after_title'   => '</h3>' );
       register_sidebar( $arges );
 }
 

@@ -8,7 +8,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <?php
-ini_set("display_errors", 1); 
+//ini_set("display_errors", 1); 
 
 	/* We add some JavaScript to pages with the comment form
 	 * to support sites with threaded comments (when in use).
@@ -50,38 +50,6 @@ foreach ($menus as $menu) {
         $i =  $menu_item->ID;
         $menuArr[$padre]["h"][$i]["titulo"] = $menu_item->title;
         $menuArr[$padre]["h"][$i]["url"] = $menu_item->url;
-      }
-    }
-    //echo "<pre>";
-    //var_dump($menuArr);
-    //echo "</pre>";
-  }
-
-  // ====================================================
-  //              MENU INICIO 
-  // ====================================================
-  $location_menu = 'primario';
-  if ($menu->term_id == $menu_locations[ $location_menu ]) {
-    // This is the correct menu
-    // Get the items for this menu
-    $menu_items = (array)wp_get_nav_menu_items($menu);
-    $arrInicio = array();
-    $i = 0;
-    foreach ($menu_items as $key => $menu_item) {
-      //echo "<pre>";
-      //var_dump($menu_item);
-      //echo "</pre>";
-      if ($menu_item->menu_item_parent == 0) {
-        $i =  $menu_item->ID;
-        $arrInicio[$i]["titulo"] = $menu_item->title;
-        $arrInicio[$i]["id"] = $menu_item->object_id;
-        $arrInicio[$i]["url"] = $menu_item->url;
-        $arrInicio[$i]["img_option"] = $menu_item->attr_title;
-      } else {
-        $padre = $menu_item->menu_item_parent;
-        $i =  $menu_item->ID;
-        $arrInicio[$padre]["h"][$i]["titulo"] = $menu_item->title;
-        $arrInicio[$padre]["h"][$i]["url"] = $menu_item->url;
       }
     }
     //echo "<pre>";

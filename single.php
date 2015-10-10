@@ -9,7 +9,7 @@ get_header();
     <div id="contenidoNoticiaPrincipal" class="row">
       <?php
   if ( have_posts() ) {
-  	while ( have_posts() ) {
+    while ( have_posts() ) {
       the_post();
       ?>
       <div id="noticiaContenido" class="large-9 medium-9 left">
@@ -20,7 +20,7 @@ get_header();
                   ?>
                   <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
                         $url = $thumb['0']; ?>
-                  <div style="background: url(<?php echo $url;?>); background-size:cover; width: 100%; height:300px;"></div>
+                  <div style="margin:0px;"><img src="<?php echo $url;?>" style="max-width:100%;" /></div>
                   <?php
                 }
               ?>
@@ -28,9 +28,28 @@ get_header();
           <div class="contenidoNoticia">
             <?php the_content(); ?>
           </div>
+          <?php 
+          $keywords = wp_get_post_tags( $post->ID, array( 'fields' => 'names' ));
+          $arreglo = "";
+        
+              if (!empty($keywords)) {
+                  //var_dump($keywords);
+                  foreach ($keywords as $k => $value) {
+                      if ($k == 0) {
+                          $arreglo = $arreglo.$value;
+                      } else {
+                          $arreglo = $arreglo.", ".$value;
+                      }
+                      //echo $arreglo;
+                  }
+                  ?>
+                  <div id="Etiquetas del post" style="font-style: italic; color: #ccc;">Etiquetas del post: <?php echo $arreglo;?></div>
+                  <?php
+              }
+          ?>
       </div>
       <?php
-  	} // end while
+    } // end while
   } // end if
   ?>
     <div id="menuOp" class="large-3 medium-3 small-12 left">
@@ -44,7 +63,7 @@ foreach ($tags as $key => $value) {
 $args=array(
 'tag__in' => $etiquetas,
 'post__not_in' => array($post->ID),
-'posts_per_page'=>5,
+'posts_per_page'=>4,
 'caller_get_posts'=>1
 );
 $my_query = new WP_Query($args);
@@ -62,7 +81,7 @@ while ($my_query->have_posts()) : $my_query->the_post(); ?>
     </div>
     <?php
     if (has_post_thumbnail()) {
-      $url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array(300,140) );
+      $url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'side-size' );
       ?>
       <img class="imagenSeleccion" src="<?php echo $url[0]; ?>" alt="">
       <?php

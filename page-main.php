@@ -123,7 +123,7 @@ foreach ($menus as $menu) {
           //Mostrar widget de mapa ubicacion
           ?>
             <div class="direccionMain large-6 medium-6 left columns">
-              <div class="overtitle">Encuéntranos</div>
+              <div class="overtitle"><a href="/contacto">Encuéntranos</a></div>
               <div class="overlay"></div>
               <div id="gmap"></div>
             </div>

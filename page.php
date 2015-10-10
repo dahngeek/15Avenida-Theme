@@ -30,7 +30,7 @@ get_header();
           </div>
       </div>
       <?php
-  	} // end while
+    } // end while
   } // end if
   ?>
     <div id="menuOp" class="large-3 medium-3 small-12 left">

@@ -2,7 +2,15 @@
 get_header();
 ?>
 <div id="slider">
-      <h1 class="titPagina">Artículos</h1>
+      <?php 
+        global $post, $category;
+        if (is_category()) {
+          $titullo = single_cat_title('', false);
+        } else {
+          $titullo = "Artículos y Temas";
+        }
+      ?>
+      <h1 class="titPagina"><?php echo $titullo; ?></h1>
     </div>
     <!-- termina slider -->
 <div id="blogPosts">

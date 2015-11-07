@@ -81,7 +81,7 @@ get_header();
  <!--Enlaces relacionados-->
 <div id="menuOp" class="large-12 medium-12 small-12 left">
   <?php
-$popularpost = new WP_Query( array( 'posts_per_page' => 5, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
+$popularpost = new WP_Query( array( 'posts_per_page' => 4, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
 if ($popularpost->have_posts()) {
 ?>
 <h3>También te puede Interesar:</h3>

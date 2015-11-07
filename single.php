@@ -9,7 +9,7 @@ get_header();
     <div id="contenidoNoticiaPrincipal" class="row">
       <?php
   if ( have_posts() ) {
-    while ( have_posts() ) {
+  	while ( have_posts() ) {
       the_post();
       ?>
       <div id="noticiaContenido" class="large-9 medium-9 left">
@@ -49,7 +49,7 @@ get_header();
           ?>
       </div>
       <?php
-    } // end while
+  	} // end while
   } // end if
   ?>
     <div id="menuOp" class="large-3 medium-3 small-12 left">

@@ -251,7 +251,7 @@ function setPageTitle() {
 
     // Add the blog description for the home/front page.
     if (is_home()) {
-        echo "Artículos";
+        echo "Artículos | ";
 } else if (is_front_page()) {
     } else if (is_search()) {
         echo "Búsqueda";
